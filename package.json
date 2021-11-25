@@ -1,0 +1,53 @@
+{
+  "name": "stackbit-typist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build:ts": "rm -rf dist && tsc",
+    "dev:ts": "tsc --watch",
+    "lint": "eslint src",
+    "prettier": "prettier --write src scripts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eladroz/sb-typist.git"
+  },
+  "files": [
+    "dist",
+    "!dist/storybook-polyfills",
+    "!dist/.tsbuildinfo",
+    "models",
+    "src",
+    "styles",
+    "!**/.DS_Store",
+    "sourcemap.patch"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eladroz/sb-typist/issues"
+  },
+  "homepage": "https://github.com/eladroz/sb-typist#readme",
+  "dependencies": {
+    "@stackbit/components": "^0.1.52",
+    "classnames": "^2.3.1",
+    "object-hash": "^2.2.0",
+    "react-typist": "^2.0.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "2.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tailwindcss": "^2.2.7",
+    "typescript": "^4.4.4"
+  }
+}

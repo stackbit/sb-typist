@@ -1,0 +1,13 @@
+name: TypistSection
+label: Typist
+#extends:
+#  - Section
+groups:
+  - sectionComponent
+fields:
+  - type: list
+    name: elements
+    label: Elements
+    items:
+      type: model
+      groups: [TypistElements]

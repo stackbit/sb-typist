@@ -1,0 +1,10 @@
+# The purpose of this stackbit.yaml is to point allow validating the models using @stackbit/cli
+stackbitVersion: 0.4.0
+pagesDir: null
+dataDir: null
+contentModels:
+  TypistSection:
+    isPage: false
+modelsSource:
+  type: files
+  modelDirs: ['models']

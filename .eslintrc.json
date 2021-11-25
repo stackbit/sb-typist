@@ -1,0 +1,41 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "lib": ["es2020"]
+    },
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:react-hooks/recommended", "prettier"],
+    "plugins": ["@typescript-eslint", "react", "react-hooks", "import", "prettier"],
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "prettier/prettier": "error",
+        "react/prop-types": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "import/order": [
+            "error",
+            {
+                "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object"],
+                "pathGroups": [
+                    {
+                        "pattern": "*.scss",
+                        "group": "object",
+                        "patternOptions": { "matchBase": true },
+                        "position": "after"
+                    },
+                    {
+                        "pattern": "*.svg",
+                        "group": "object",
+                        "patternOptions": { "matchBase": true },
+                        "position": "after"
+                    }
+                ]
+            }
+        ]
+    },
+    "ignorePatterns": ["scripts/*.js", "styles/**/*.js", "src/next-stackbit-components.js", "src/dynamic-components.js"]
+}
