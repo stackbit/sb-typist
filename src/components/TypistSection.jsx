@@ -2,7 +2,6 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Typist from 'react-typist';
 import hash from 'object-hash';
-import 'react-typist/dist/Typist.css';
 
 // React-typist doesn't like fragments, custom components and such,
 // so return an array of actual simple elements to add. Each should have a unique key.
