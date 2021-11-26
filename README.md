@@ -18,6 +18,19 @@ Note that when pushing changes upstream, the visual editor will take some time t
 
 If working with the online code editor, add a dependency inside `package.json` directly: under `dependencies` add the line `"stackbit-typist": "^1.0.0",` and save the file.
 
+### Loading models
+
+Add the models directory of this package to the `modelsSource` property in `stackbit.yaml`. It should look like:
+
+```yaml
+modelsSource:
+  type: files
+  modelDirs:
+    - node_modules/@stackbit/components/models
+    - node_modules/stackbit-typist/models
+    - .stackbit/models
+```
+
 ### Registering components
 
 Registering the components (currently just one...) in this package in addition to built-in ones is simple:

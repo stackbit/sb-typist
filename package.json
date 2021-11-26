@@ -1,6 +1,6 @@
 {
   "name": "stackbit-typist",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Stackbit V2 Component wrapping react-typist, styled like a terminal window.",
   "main": "dist/index.js",
   "scripts": {
