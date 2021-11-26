@@ -51,6 +51,33 @@ registerComponents({
 
 This will map the model name `TypistSection` to the React functional component (imported dynamically).
 
+### Preserving Tailwind classes used by the component (THE UGLY)
+
+Ok, here's the ugly part (which needs a better handling in the theme & stackbit-components to make it nicer):
+
+Currently, the Tailwind preset loaded by the our themes (in `tailwind.config.css`) from stackbit-components is only preventing classes used by either the project itself or stackbit-components files from being purged. This means Tailwind classes used by this component are purged. SAD.
+
+Seems that the `purge` property in Tailwind config [is not merge-able](https://tailwindcss.com/docs/presets#how-configurations-are-merged) (didn't dig too much into this), so for now, add the exported object in your Tailwind configuration file the following code.
+
+```js
+    // In module.exports:
+    purge: {
+        enabled: false,
+        content: [
+            './src/**/*.{js,ts,jsx,tsx}',
+            './node_modules/@stackbit/components/src/{base,layouts,components,utils}/**/*.{js,ts,jsx,tsx}',
+            './node_modules/stackbit-typist/dist/components/**/*.{js,ts,jsx,tsx}',
+            './content/**/*'
+        ],
+        safelist: ['colors-a', 'colors-b', 'colors-c', 'colors-d', 'colors-e', 'colors-f', 'colors-g', 'colors-h', 'colors-i']
+    },
+    theme: { //...
+``` 
+
+This is basically the `purge` object from the preset plus a single new line which instructs Tailwind not to purge classes used in `'./node_modules/stackbit-typist/...`:
+
+**Suggested improvement:** merge purge content array ourselves (collect from all used packages) before setting it in the config. Don't have this in the preset.
+
 ### Adding the CSS file (optional)
 
 To provide the nice blinking cursor effect, react-typist provides a vanilla CSS file. Since Next.js does not allow global CSS files loaded outside of the App module, if you want this effect you'll need to add the following line to your `src/pages/_app.js` file:
