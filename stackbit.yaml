@@ -1,4 +1,5 @@
-# The purpose of this stackbit.yaml is to point allow validating the models using @stackbit/cli
+# While this package is not a Stackbit project in itself,
+# having a stackbit.yaml is necessary to allow running model validation with @stackbit/cli
 stackbitVersion: 0.4.0
 pagesDir: null
 dataDir: null
@@ -7,4 +8,4 @@ contentModels:
     isPage: false
 modelsSource:
   type: files
-  modelDirs: ['models']
+  modelDirs: ['modelStubs', 'models']

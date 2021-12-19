@@ -1,26 +1,18 @@
 {
     "compilerOptions": {
         "target": "es2020",
-        "module": "commonjs",
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
         "skipLibCheck": true,
         "strict": false,
         "forceConsistentCasingInFileNames": true,
-        "incremental": true,
-        "declaration": true,
         "esModuleInterop": true,
-        "sourceMap": true,
-        "declarationMap": true,
+        "module": "es2020",
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "jsx": "react",
+        "jsx": "react-jsx",
         "outDir": "./dist",
-        "tsBuildInfoFile": "./dist/.tsbuildinfo",
-        "rootDir": "./src",
-		"baseUrl": ".",
-    },
-    "include": ["src/**/*.ts", "src/**/*.tsx"],
-    "exclude": ["node_modules", "src/**/*.stories.*", "src/storybook-addons/**/*", "src/components-map.ts"]
+        "rootDir": "./src" 
+    }
 }

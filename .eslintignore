@@ -1,6 +1,0 @@
-node_modules
-cypress
-package-lock.json
-.prettierrc
-.eslintrc.json
-package.json
