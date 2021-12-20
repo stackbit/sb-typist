@@ -4,6 +4,7 @@ import Typist from 'react-typist';
 import hash from 'object-hash';
 import { TerminalWindow } from './TerminalWindow';
 
+// Convert a single item in the content's elements list field (see models) into one or more React components.
 function makeElements(elem, i) {
     let children = [];
     if (elem.delayBefore)
@@ -36,9 +37,8 @@ function getDataAttrs(props) {
 }
 
 export default function TypistSection(props) {
-    // react-typist component won't re-run by itself once the animation has run once,
-    // even if its children have changed.
-    // To trigger it on changes to props.elements, the key is based on the elements hash
+    // Note: react-typist doesn't re-run once the animation has finished, even on changes to children.
+    // To have React trigger it, the key is based on the elements hash.
     // See: https://github.com/jstejada/react-typist/issues/6#issuecomment-458473948
     let component = null;
     if (props.elements)

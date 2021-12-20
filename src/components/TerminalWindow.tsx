@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+// Draw the given children inside a "terminal window" visual element
 export function TerminalWindow(props) {
     // Adapted from https://tailwindcomponents.com/component/terminal
     return (
