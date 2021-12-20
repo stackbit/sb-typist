@@ -2,6 +2,8 @@
 
 This package provides **TypistSection**, a Stackbit component for typing animation based on [react-typist](https://www.npmjs.com/package/react-typist). The animation is optionally rendered inside a terminal window-like element (adopted from [Simple Terminal](https://tailwindcomponents.com/component/terminal)).
 
+https://user-images.githubusercontent.com/2673881/146737487-d5b9efb6-1345-4656-a28b-4c8012fe3d69.mp4
+
 The component isn't meant to be a extensive solution. Use as-is or extend to your needs!
 
 ## Setup
