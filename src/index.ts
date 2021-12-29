@@ -1,7 +1,3 @@
-import dynamic from 'next/dynamic';
+import TypistSection from './components/TypistSection';
 
-const components = {
-    TypistSection: dynamic(() => import('./components/TypistSection'))
-};
-
-export default components;
+export default TypistSection;

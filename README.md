@@ -44,7 +44,7 @@ Open the file `src/components/components-registry.js` in your project (assuming 
 Add the following line to to the `components` object:
 ```js
 const components = {
-    'TypistSection': dynamic(() => import('../../node_modules/stackbit-typist/dist/components/TypistSection')), // Added line
+    'TypistSection': dynamic(() => import('../../node_modules/stackbit-typist')), // Added line
     // ... rest of object
 ```
 
@@ -55,7 +55,7 @@ This will map the model name `TypistSection` to the React functional component. 
 Open the file `tailwind.config.js` in your project.
 
 Locate the array `purge.content` inside the `module.exports` object, and add this value to the array:
-`'./node_modules/stackbit-typist/dist/components/**/*.{js,ts,jsx,tsx}'`. 
+`'./node_modules/stackbit-typist/dist/components/**/*.js'`. 
 
 Here's how the code should look like:
 
@@ -64,7 +64,9 @@ Here's how the code should look like:
 module.exports = {
     mode: 'jit',
     purge: {
-        content: ['./src/**/*.{js,ts,jsx,tsx}', './content/**/*', './node_modules/stackbit-typist/dist/components/**/*.{js,ts,jsx,tsx}'], // Last item was added now
+        content: ['./src/**/*.{js,ts,jsx,tsx}', 
+                  './content/**/*', 
+                  './node_modules/stackbit-typist/dist/components/**/*.js'], // This item added now
         // ...
 ```
 
